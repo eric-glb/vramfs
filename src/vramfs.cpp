@@ -569,6 +569,9 @@ int main(int argc, char* argv[]) {
     // OpenCL driver acts funky if program doesn't keep running in foreground
     fuse_opt_add_arg(&args, "-f");
 
+    // https://github.com/Overv/vramfs/issues/36
+    fuse_opt_add_arg(&args, "-oallow_other");
+
     /*pid_t pid;
     pid = fork();
     if(pid > 0) {
